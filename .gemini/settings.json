@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "o3-bridge": {
+      "command": "python",
+      "args": ["-m", "dotenv", "run", "--",
+        "python", "-u", "mcp_server.py"],
+      "cwd": ".",           // スクリプトのあるディレクトリ
+      "env": {
+        "OPENAI_API_KEY": "${env:OPENAI_API_KEY}",
+        "OPENAI_MODEL": "o3",
+        "PORT": "5000"      // CLI がデフォルトで叩くポート
+      },
+      "trust": true         // “このコマンドを実行していい？”を聞かれなくする
+    }
+  }
+}
+
